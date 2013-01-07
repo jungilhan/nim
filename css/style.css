@@ -1,0 +1,29 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,600,700);
+
+.container {
+  font-family: "Nanum Gothic";
+}
+
+.hero-unit {
+  padding: 24px;
+}
+
+.span4 {
+  text-align: center;
+}
+
+.span4 h1 {
+  font-size: 100px;
+  line-height: 110px;  
+}
+
+.nim-msg {
+  margin-right: 10px;
+}
+
+.nim-toolbar {
+  margin: 0 auto;
+  text-align: center;
+  margin: 20px auto;
+}

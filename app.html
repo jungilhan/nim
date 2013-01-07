@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>NIM GAME</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">NIM PROTOTYPE</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Main hero unit for a primary marketing message or call to action -->
+      <div class="hero-unit">
+        <h2>Nim 게임에 오신 것을 환영합니다.</h2>        
+        <p>
+          님(Nim) 게임은 수학적 전략 게임입니다. 몇개의 줄에 숫자나 자연수개의 돌을 두고 순서대로 돌아가면서 숫자나 돌을 제거해 마지막 돌을 가져가는 사람이 이기거나 지는(Reverse Nim) 게임입니다. 
+        </p>
+        <p>
+          <a class="btn btn-info btn-large" href="http://en.wikipedia.org/wiki/Nim" target="_blank">더보기 &raquo;</a>
+        </p>
+      </div>
+
+      <div>
+        <div class="alert alert-info">
+          세 숫자 그룹 중 원하는 만큼의 숫자를 빼서 <strong>마지막 1</strong>을 만들어보세요!
+        </div>         
+        <span id="turn-msg" class="alert alert-success nim-msg">
+          당신 차례입니다.
+        </span> 
+        <span id="error-msg" class="alert alert-error nim-msg hide">          
+        </span>
+      </div>      
+
+      <div class="row">
+        <div class="span4">
+          <h1 id="nim-heap-a">7</h1>
+          <p><input type="number" id="nim-input-a" class="input-small" placeholder="" value="0"></p>
+        </div>
+        <div class="span4">
+          <h1 id="nim-heap-b">3</h1>
+          <p><input type="number" id="nim-input-b" class="input-small" placeholder="" value="0"></p>
+       </div>
+        <div class="span4">
+          <h1 id="nim-heap-c">6</h1>
+          <p><input type="number" id="nim-input-c" class="input-small" placeholder="" value="0"></p>
+        </div>        
+      </div> <!-- row -->
+
+      <div class="nim-toolbar">
+        <a id="new" class="btn btn-large btn-success hide" href="#"><i class="icon-repeat"></i> 새로하기</a>
+        <a id="subtract" class="btn btn-large btn-info" href="#"><i class="icon-minus"></i> 빼기</a>
+      </div>
+
+      <br>
+      <hr>
+      <footer>
+        <p>&copy; 불고기 스튜디오 2012</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->    
+    <script data-main="js/app" src="js/require-jquery.js"></script>
+  </body>
+</html>
