@@ -22,6 +22,9 @@ define(['jquery'], function($) {
     $inputA.val(0);
     $inputB.val(0);
     $inputC.val(0);
+    $inputA.tooltip('hide');
+    $inputB.tooltip('hide');
+    $inputC.tooltip('hide');
   }
 
   function subtract() {
@@ -56,6 +59,13 @@ define(['jquery'], function($) {
 
       $('input[type="number"]').keypress(function(event) {
         NimInput.onkeypress($(this), event);
+      });
+
+      $('input[type="number"]').on('keyup change click', function() {
+        var currentA = Number($heapA.text());
+        var currentB = Number($heapB.text());
+        var currentC = Number($heapC.text());
+        NimInput.onchange($(this), {a: currentA, b: currentB, c: currentC});
       });
     }); // require    
   })(); // bindEvent
