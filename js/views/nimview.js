@@ -18,14 +18,18 @@ define(['jquery'], function($) {
     $('#new').show();
   }
 
-  function init() {
+  function initInput() {
     $inputA.val(0);
     $inputB.val(0);
     $inputC.val(0);
   }
 
+  function subtract() {
+    $('#subtract').click();
+  }
+
   (function bindEvent() {
-    require(['controllers/nimcontroller'], function(NimController){
+    require(['controllers/nim', 'controllers/niminput'], function(Nim, NimInput){
       $('#subtract').click(function() {
         var currentA = Number($heapA.text());
         var currentB = Number($heapB.text());
@@ -34,22 +38,32 @@ define(['jquery'], function($) {
         var subtractB = $inputB.val();
         var subtractC = $inputC.val();
 
-        NimController.onsubtract({a: currentA, b: currentB, c: currentC},
+        Nim.onsubtract({a: currentA, b: currentB, c: currentC},
           {a: subtractA, b: subtractB, c: subtractC});
 
-        init();
+        NimInput.start();
       });
 
       $('#new').click(function() {
         $('#subtract').show();
         $('#new').hide();
-        NimController.start();
+        Nim.start();
+      });
+
+      $('input[type="number"]').focus(function() {
+        NimInput.onfocus($(this));
+      });
+
+      $('input[type="number"]').keypress(function(event) {
+        NimInput.onkeypress($(this), event);
       });
     }); // require    
   })(); // bindEvent
 
   return {
     render: render,
-    newGame: newGame
+    newGame: newGame,
+    initInput: initInput,
+    subtract: subtract
   };
 });
